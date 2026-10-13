@@ -33,9 +33,18 @@ const routes = {
   "cron/expire-holds": cronExpireHolds,
 };
 
+function resolvePath(req) {
+  const fromQuery = req.query && req.query.route;
+  if (fromQuery) {
+    const joined = Array.isArray(fromQuery) ? fromQuery.join("/") : String(fromQuery);
+    if (joined) return joined;
+  }
+  const raw = (req.url || "").split("?")[0];
+  return raw.replace(/^\/api\/?/, "").replace(/\/+$/, "");
+}
+
 export default async function handler(req, res) {
-  const raw = req.query.route;
-  const path = (Array.isArray(raw) ? raw.join("/") : raw || "").replace(/\/+$/, "");
+  const path = resolvePath(req);
   const fn = routes[path];
   if (!fn) return res.status(404).json({ error: `Unknown API route: /api/${path}` });
   return fn(req, res);
