@@ -1,4 +1,5 @@
 import { Facebook, Instagram, MessageCircle, Mountain } from "lucide-react";
+import { PHOTO_CREDITS } from "../../data/photos";
 
 export default function Footer({ onSelectCategory, onShowAdmin, onNotify }) {
   const placeholder = (message) => (e) => {
@@ -51,6 +52,7 @@ export default function Footer({ onSelectCategory, onShowAdmin, onNotify }) {
           <nav aria-label="Discover">
             <h4>Discover</h4>
             <a href="#destinations">Meghalaya guides</a>
+            <a href="#places">Must-visit places</a>
             <a href="#why-us">Why Shillong Ride</a>
             <a href="#how-it-works">How it works</a>
             <a href="#admin-preview" onClick={onShowAdmin}>
@@ -73,6 +75,17 @@ export default function Footer({ onSelectCategory, onShowAdmin, onNotify }) {
             </a>
           </nav>
         </div>
+        <p className="footer-credits">
+          Location photography from Wikimedia Commons, used under free licences:{" "}
+          {PHOTO_CREDITS.map((credit, i) => (
+            <span key={credit.title}>
+              <a href={credit.href} target="_blank" rel="noopener noreferrer">
+                {credit.title}
+              </a>{" "}
+              ({credit.artist}, {credit.license}){i < PHOTO_CREDITS.length - 1 ? "; " : "."}
+            </span>
+          ))}
+        </p>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Shillong Ride. Concept prototype.</span>
           <span>

@@ -28,6 +28,9 @@ export default function Navbar({
         <a href="#destinations" onClick={onCloseMenu}>
           Explore Meghalaya
         </a>
+        <a href="#places" onClick={onCloseMenu}>
+          Must-visit places
+        </a>
         <a href="#how-it-works" onClick={onCloseMenu}>
           How it works
         </a>
@@ -46,6 +49,38 @@ export default function Navbar({
             My bookings
           </a>
         )}
+        <div className="navlinks-mobile-actions">
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              onCloseMenu();
+              onBookRide();
+            }}
+          >
+            Book a ride
+          </button>
+          {authLoading ? null : user ? (
+            <button
+              className="btn btn-light"
+              onClick={() => {
+                onCloseMenu();
+                onLogout();
+              }}
+            >
+              Log out
+            </button>
+          ) : (
+            <button
+              className="btn btn-light"
+              onClick={() => {
+                onCloseMenu();
+                onLoginClick();
+              }}
+            >
+              Log in
+            </button>
+          )}
+        </div>
       </nav>
       <div className="nav-actions">
         {authLoading ? null : user ? (

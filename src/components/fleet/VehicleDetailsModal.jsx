@@ -4,19 +4,23 @@ import { formatINR } from "../../utils/formatCurrency";
 
 export default function VehicleDetailsModal({ vehicle, onClose, onContinue }) {
   const closeRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useEffect(() => {
+    if (!vehicle) return undefined;
     closeRef.current?.focus();
     const onKey = (e) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") onCloseRef.current();
     };
     document.addEventListener("keydown", onKey);
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
-  }, [onClose]);
+  }, [vehicle]);
 
   if (!vehicle) return null;
 

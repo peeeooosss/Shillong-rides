@@ -11,6 +11,8 @@ import VehicleGrid from "./components/fleet/VehicleGrid";
 import VehicleDetailsModal from "./components/fleet/VehicleDetailsModal";
 import Hero from "./components/sections/Hero";
 import Destinations from "./components/sections/Destinations";
+import MustVisit from "./components/places/MustVisit";
+import PhotoStrip from "./components/sections/PhotoStrip";
 import Experience from "./components/sections/Experience";
 import HowItWorks from "./components/sections/HowItWorks";
 import CallToAction from "./components/sections/CallToAction";
@@ -136,6 +138,8 @@ export default function App() {
           onReset={resetFilters}
         />
         <Destinations onNotify={notify} />
+        <MustVisit onExplore={() => scrollTo("fleet")} />
+        <PhotoStrip />
         <Experience onHowItWorks={() => scrollTo("how-it-works")} />
         <HowItWorks />
         <CallToAction onExplore={() => scrollTo("fleet")} />
@@ -154,11 +158,13 @@ export default function App() {
         onNotify={notify}
       />
 
-      <VehicleDetailsModal
-        vehicle={selected}
-        onClose={() => setSelected(null)}
-        onContinue={() => handleContinue(selected)}
-      />
+      {selected && (
+        <VehicleDetailsModal
+          vehicle={selected}
+          onClose={() => setSelected(null)}
+          onContinue={() => handleContinue(selected)}
+        />
+      )}
       {bookingVehicle && (
         <BookingModal
           vehicle={bookingVehicle}

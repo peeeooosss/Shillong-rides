@@ -1,14 +1,65 @@
 :root {
+  /* ---- Brand colour ---- */
   --pine: #16372d;
   --pine-2: #244f40;
+  --pine-3: #183b30;
+  --deep: #102b22;
   --sage: #dce8d5;
   --mist: #f5f5ef;
   --paper: #fffefa;
   --amber: #dcae69;
+  --amber-2: #e8bd7c;
+  --amber-ink: #8b622d;
+  --amber-soft: #f3d7a8;
+
+  /* ---- Text & lines ---- */
   --ink: #17241f;
   --muted: #69766f;
+  --muted-2: #849087;
   --line: #e4e8e0;
+  --line-2: #edf0e9;
 
-  --font-heading: "Manrope", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  /* ---- Accents ---- */
+  --gold: #d8a34e;
+  --rose: #bc5a4b;
+  --danger: #9c3d2e;
+
+  /* ---- Typography ---- */
+  --font-heading: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* ---- Radii ---- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* ---- Spacing ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 22px;
+  --sp-6: 30px;
+  --sp-7: 44px;
+  --sp-8: 88px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 4px 14px rgba(22, 55, 45, 0.06);
+  --shadow-md: 0 14px 38px rgba(22, 55, 45, 0.1);
+  --shadow-lg: 0 20px 60px rgba(21, 47, 36, 0.11);
+  --shadow-xl: 0 25px 100px rgba(0, 0, 0, 0.33);
+
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --gutter: 44px;
+  --nav-h: 82px;
+
+  /* ---- Z-index scale ---- */
+  --z-sticky: 3;
+  --z-nav: 10;
+  --z-overlay: 20;
+  --z-toast: 40;
 }
