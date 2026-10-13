@@ -1,5 +1,5 @@
-import { db, send, method, readJson, isValidDateISO } from "./_lib/db.js";
-import { computeQuote, isAvailable } from "./_lib/booking.js";
+import { db, send, method, readJson, isValidDateISO } from "../db.js";
+import { computeQuote, isAvailable } from "../booking.js";
 
 // POST /api/quote { vehicleId, pickupDate, returnDate, riders, couponCode? }
 // Price is ALWAYS computed here — the frontend only displays it.

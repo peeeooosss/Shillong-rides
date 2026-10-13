@@ -1,5 +1,5 @@
-import { db, send, method, readJson } from "../_lib/db.js";
-import { requireAdmin } from "../_lib/session.js";
+import { db, send, method, readJson } from "../../db.js";
+import { requireAdmin } from "../../session.js";
 
 // Coupon CRUD (admin only).
 export default async function handler(req, res) {

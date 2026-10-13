@@ -1,5 +1,5 @@
-import { db, send, method, readJson } from "../_lib/db.js";
-import { requireStaff, requireAdmin } from "../_lib/session.js";
+import { db, send, method, readJson } from "../../db.js";
+import { requireStaff, requireAdmin } from "../../session.js";
 
 // GET /api/admin/bookings?status=requested — booking queue (staff+)
 // PATCH /api/admin/bookings { id, status } — advance status.

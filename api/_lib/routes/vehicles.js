@@ -1,5 +1,5 @@
-import { db, send, method, isValidDateISO } from "./_lib/db.js";
-import { isAvailable } from "./_lib/booking.js";
+import { db, send, method, isValidDateISO } from "../db.js";
+import { isAvailable } from "../booking.js";
 
 // GET /api/vehicles?from=YYYY-MM-DD&to=YYYY-MM-DD&category=Car
 // Returns active fleet with live `available` flags (demo rows included until replaced).

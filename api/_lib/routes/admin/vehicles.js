@@ -1,5 +1,5 @@
-import { db, send, method, readJson } from "../_lib/db.js";
-import { requireAdmin } from "../_lib/session.js";
+import { db, send, method, readJson } from "../../db.js";
+import { requireAdmin } from "../../session.js";
 
 // Fleet CRUD (admin only). DELETE is a soft-deactivate to preserve booking history.
 export default async function handler(req, res) {

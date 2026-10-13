@@ -1,5 +1,5 @@
-import { send, method } from "../_lib/db.js";
-import { clearSessionCookie } from "../_lib/session.js";
+import { send, method } from "../../db.js";
+import { clearSessionCookie } from "../../session.js";
 
 // POST /api/auth/logout
 export default async function handler(req, res) {

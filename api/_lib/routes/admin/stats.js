@@ -1,5 +1,5 @@
-import { db, send, method } from "../_lib/db.js";
-import { requireStaff } from "../_lib/session.js";
+import { db, send, method } from "../../db.js";
+import { requireStaff } from "../../session.js";
 
 // GET /api/admin/stats — real KPIs from the database (staff+)
 export default async function handler(req, res) {

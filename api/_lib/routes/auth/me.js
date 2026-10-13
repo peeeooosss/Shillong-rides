@@ -1,5 +1,5 @@
-import { db, send, method } from "../_lib/db.js";
-import { getSession } from "../_lib/session.js";
+import { db, send, method } from "../../db.js";
+import { getSession } from "../../session.js";
 
 // GET /api/auth/me
 export default async function handler(req, res) {

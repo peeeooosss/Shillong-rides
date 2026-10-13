@@ -1,4 +1,4 @@
-import { db, send, method } from "../_lib/db.js";
+import { db, send, method } from "../../db.js";
 
 // GET /api/cron/expire-holds — called by Vercel Cron. Enforces CRON_SECRET when set.
 export default async function handler(req, res) {

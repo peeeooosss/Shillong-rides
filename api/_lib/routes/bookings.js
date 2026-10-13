@@ -1,7 +1,7 @@
-import { db, send, method, readJson, isValidDateISO } from "./_lib/db.js";
-import { requireUser } from "./_lib/session.js";
-import { computeQuote, isAvailable, buildWhatsAppUrl, generateRef } from "./_lib/booking.js";
-import { PICKUP_LOCATIONS } from "../src/data/vehicles.js";
+import { db, send, method, readJson, isValidDateISO } from "../db.js";
+import { requireUser } from "../session.js";
+import { computeQuote, isAvailable, buildWhatsAppUrl, generateRef } from "../booking.js";
+import { PICKUP_LOCATIONS } from "../../../src/data/vehicles.js";
 
 // POST /api/bookings — create a booking, then hand off to WhatsApp (auth required)
 // GET  /api/bookings — list my bookings (auth required)

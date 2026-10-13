@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
-import { db, send, method, readJson, normalizePhone } from "../_lib/db.js";
-import { signSession, setSessionCookie } from "../_lib/session.js";
+import { db, send, method, readJson, normalizePhone } from "../../db.js";
+import { signSession, setSessionCookie } from "../../session.js";
 
 // POST /api/auth/login { phone, password }
 export default async function handler(req, res) {

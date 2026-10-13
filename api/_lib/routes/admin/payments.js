@@ -1,5 +1,5 @@
-import { db, send, method, readJson } from "../_lib/db.js";
-import { requireStaff } from "../_lib/session.js";
+import { db, send, method, readJson } from "../../db.js";
+import { requireStaff } from "../../session.js";
 
 // GET /api/admin/payments?bookingId= — ledger (staff+)
 // POST /api/admin/payments { bookingId, mode, amount, note } — record a WhatsApp-settled payment (staff+)
