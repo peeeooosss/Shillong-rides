@@ -5,5 +5,11 @@
       "path": "/api/cron/expire-holds",
       "schedule": "0 3 * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/admin/:resource",
+      "destination": "/api/admin?resource=:resource"
+    }
   ]
 }
